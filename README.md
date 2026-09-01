@@ -27,7 +27,7 @@
 - Stock prices are inherently non-linear over multiple years so it fails to adapt to periods of acceleration or deceleration in price growth.
 
 **Polynomial (Blue Line):**
-- Forms a U-shaped quadratic curve starting high (~$240 in 2020), bottoming out around 2023 (~$165), and curving back up toward 2026.
+- Forms a U-shaped quadratic curve starting high, bottoming out around 2023, and curving back up toward 2026.
 - The degree of 2 is improperly tuned for time-series regression
 - E.g. It predicts that prices in early 2020 were higher than prices in 2022–2024, which directly contradicts the actual data points.
 
