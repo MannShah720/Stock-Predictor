@@ -13,3 +13,6 @@
   1. Linear SVR: Assumes the relationship is a straight line.
   2. Polynomial SVR: With `degree` of 2, assumes a quadratic relationship.
   3. Radial Basis Function: Lets the data determine the shape of the curve and the `gamma` parameter controls how far the influence of each training data point reaches.
+
+# Results
+![Stock Prediction Graph](plot.png)
