@@ -15,4 +15,4 @@
   3. Radial Basis Function: Lets the data determine the shape of the curve and the `gamma` parameter controls how far the influence of each training data point reaches.
 
 # Results
-![Stock Prediction Graph](plot.png)
+![Stock Prediction Graph](Plot.png)
