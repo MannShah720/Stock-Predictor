@@ -10,9 +10,9 @@
 - The penalty parameter `C = 1e3` controls how strongly the SVR model tries to fit the training data and therefore is used to determine the 2nd outcome
 
 - I use 3 types of SVR:
-  1. Linear SVR: Assumes the relationship is a straight line.
-  2. Polynomial SVR: With `degree` of 2, assumes a quadratic relationship.
-  3. Radial Basis Function: Lets the data determine the shape of the curve and the `gamma` parameter controls how far the influence of each training data point reaches.
+  1. **Linear SVR:** Assumes the relationship is a straight line.
+  2. **Polynomial SVR:** With `degree` of 2, assumes a quadratic relationship.
+  3. **Radial Basis Function:** Lets the data determine the shape of the curve and the `gamma` parameter controls how far the influence of each training data point reaches.
 
 ## Results
 <img src="Plot.png" alt="Stock Prediction Graph" width="700">
@@ -32,4 +32,10 @@
 - E.g. It predicts that prices in early 2020 were higher than prices in 2022–2024, which directly contradicts the actual data points.
 
 ## Conclusions
-The major limitation is that uses the date as the sole input feature, which makes SVR a curve fitting tool rather than a predictive model.  It fits a trajectory over past dates but cannot forecast future market movements or react to structural shifts.
+The major limitation is that it uses the raw date as the sole input feature, which makes SVR a curve fitting tool rather than a predictive model.  It fits a trajectory over past dates but cannot forecast future market movements or react to structural shifts.
+
+Improvements may include:
+- Replace raw dates with lagged indicators (such as daily opening prices, moving averages, RSI, or volume)
+- Instead of predicting absolute price level, predict log returns or or target stationary price differences.
+- Adjust the degree and gamma parameters
+- Split data strictly into past training and future test sets
