@@ -14,5 +14,22 @@
   2. Polynomial SVR: With `degree` of 2, assumes a quadratic relationship.
   3. Radial Basis Function: Lets the data determine the shape of the curve and the `gamma` parameter controls how far the influence of each training data point reaches.
 
-# Results
+## Results
 <img src="Plot.png" alt="Stock Prediction Graph" width="700">
+
+**RBF (Red Line):**
+- Captures the overall non-linear macro trend best among the three.
+- However, it acts as a smooth trend line rather than a true short-term predictor.
+- It completely ignores short-term volatility, market corrections (e.g., late 2022/2023 dip, early 2025 pullback), and rapid momentum bursts.
+
+**Linear (Green Line):**
+- Fits a simple straight-line upward trend across the entire dataset
+- Stock prices are inherently non-linear over multiple years so it fails to adapt to periods of acceleration or deceleration in price growth.
+
+**Polynomial (Blue Line):**
+- Forms a U-shaped quadratic curve starting high (~$240 in 2020), bottoming out around 2023 (~$165), and curving back up toward 2026.
+- The degree of 2 is improperly tuned for time-series regression
+- E.g. It predicts that prices in early 2020 were higher than prices in 2022–2024, which directly contradicts the actual data points.
+
+## Conclusions
+The major limitation is that uses the date as the sole input feature, which makes SVR a curve fitting tool rather than a predictive model.  It fits a trajectory over past dates but cannot forecast future market movements or react to structural shifts.
